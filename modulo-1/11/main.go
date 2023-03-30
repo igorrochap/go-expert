@@ -2,10 +2,18 @@ package main
 
 import "fmt"
 
+type Address struct {
+	Street string
+	Number int
+	City   string
+	State  string
+}
+
 type Client struct {
 	Name   string
 	Age    int
 	Active bool
+	Address
 }
 
 func main() {
@@ -17,8 +25,8 @@ func main() {
 
 	fmt.Printf("Name: %s, Age: %d, Active: %t\n", igor.Name, igor.Age, igor.Active)
 
-	igor.Active = false
+	igor.City = "Maceió"
 
-	fmt.Printf("Active: %t\n", igor.Active)
+	fmt.Println(igor.Address)
 
 }
