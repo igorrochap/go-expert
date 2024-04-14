@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -71,9 +69,17 @@ func main() {
 	// }
 
 	//like
-	var products []Product
-	db.Where("name like ?", "%k%").Find(&products)
-	for _, product := range products {
-		fmt.Println(product)
-	}
+	// var products []Product
+	// db.Where("name like ?", "%k%").Find(&products)
+	// for _, product := range products {
+	// 	fmt.Println(product)
+	// }
+
+	//update
+	var product Product
+	db.First(&product, 1)
+	product.Name = "New Mouse"
+	db.Save(&product)
+
+	db.Delete(&product)
 }
