@@ -10,4 +10,6 @@ func main() {
 	println(m.Add())
 
 	println(uuid.New().String())
+
+	// go mod tidy -e
 }
