@@ -1,10 +1,14 @@
 package math
 
 type Math struct {
-	A int
-	B int
+	a int
+	b int
+}
+
+func Construct(a, b int) Math {
+	return Math{a, b}
 }
 
 func (math Math) Add() int {
-	return math.A + math.B
+	return math.a + math.b
 }
